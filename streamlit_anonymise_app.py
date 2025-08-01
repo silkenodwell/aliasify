@@ -75,7 +75,7 @@ st.markdown(
 # -- 1. Raw input --------------------------------------------------------------
 raw_text = st.text_area("Paste your *original* text here", height=200, key="raw_text")
 
-if st.button("🔍 Detect / refresh entities", key="detect_btn"):
+if st.button("🔍 Detect / Refresh Entities", key="detect_btn"):
     if not raw_text.strip():
         st.warning("Please enter some text first.")
     else:
@@ -159,3 +159,11 @@ if st.button("🔓 Decode", key="decode_btn"):
     else:
         decoded_text = decode(encoded_reply, active_map)
         st.text_area("Decoded reply", value=decoded_text, height=200)
+
+# -- 5. Reset button ----------------------------------------------------------
+if st.button("🔄 Reset", key="reset_btn"):
+    for k in list(st.session_state.keys()):
+        del st.session_state[k]
+    st.session_state["raw_text"] = ""
+    st.session_state["encoded_reply"] = ""
+    st.rerun()
