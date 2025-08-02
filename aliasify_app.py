@@ -65,8 +65,8 @@ def decode(text: str, mapping: dict[str, str]) -> str:
 # -----------------------------------------------------------------------------
 # 🖼️  Streamlit UI
 # -----------------------------------------------------------------------------
-st.set_page_config(page_title="Entity Privacy Wrapper", page_icon="🕵️‍♂️", layout="centered")
-st.title("🕵️‍♂️ Entity Privacy Wrapper")
+st.set_page_config(page_title="Aliasify", page_icon="🕵️‍♂️", layout="centered")
+st.title("🕵️‍♂️ Aliasify")
 st.markdown(
     "Mask named entities in your text before sending it to an LLM, then restore "
     "them afterwards — all locally in your browser session."
